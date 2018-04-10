@@ -13,6 +13,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, "MongoDB connection error:"));
 
 app.use(morgan('dev'));			//morgan loggin midleware
+app.use('/uploads', express.static('uploads'));		//makes upload folder available publicly
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
